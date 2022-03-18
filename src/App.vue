@@ -3,10 +3,20 @@ import { VueLive } from 'vue-live'
 // if you are using vue-cli, you have to import the css separately
 import "vue-live/lib/vue-live.esm.css";
 import "prismjs/themes/prism-tomorrow.css";
+
+const code = `
+let cool = 12
+
+<center>
+  <button style="width:100px" @click="cool++">{{ cool }}</button>
+</center>
+`
 </script>
 
 <template>
-  <VueLive code="<h1>coco</h1>" />
+  <div style="width:70vw;margin:50px auto; border:1px solid #ccc; padding:20px; border-radius: 20px;">
+    <VueLive :code="code" />
+  </div>
 </template>
 
 <style>
